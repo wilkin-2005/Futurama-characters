@@ -1,6 +1,7 @@
 
 import Link from "next/link";
 import styles from "./pagination.module.css";
+import SelectSize from "./select-size";
 
 interface paginationProps {
     page: number;
@@ -17,7 +18,11 @@ export default function Pagination( { page, pagesAmount, showPageNr }: paginatio
 
                 <Link href={`futurama/?page=${page-1}`} > Föregående sida </Link>
 
+                <SelectSize />
+
+
                 <span className={styles.middle_splitter} ></span>
+
 
                 {/* Hindrar användaren från att klicka vidare till nästa sida när det inte finns någon nästa sida */}
                 {

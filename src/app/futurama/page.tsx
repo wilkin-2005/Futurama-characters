@@ -35,8 +35,6 @@ export default async function FuturamaPage( { searchParams }: {
 
     const response: CharacterResponse = await getCharactersREST(currentPage);
 
-    console.log("response.pages == " + response.pages);
-
     return (
         <main>
             <Hero title="Futurama" imgIds={2} />
@@ -57,8 +55,8 @@ export default async function FuturamaPage( { searchParams }: {
                 </ul>
 
                 <Pagination page={currentPage} pagesAmount={response.pages} showPageNr={true} />
+
             </section>
-            
         </main>
     );
 }
