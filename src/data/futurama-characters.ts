@@ -1,6 +1,7 @@
 
 import data from "./futurama-characters.json";
 import { formatCharacterDate } from "@/src/lib/util";
+import { DEFAULT_LIMIT } from "@/src/lib/globals";
 
 export interface CharacterProps {
     id?: number;
@@ -17,7 +18,7 @@ export interface CharacterResponse {
     items: CharacterProps[];
     page: number;
     pages: number;
-    size: number;
+    limit: number;
     total: number;
 }
 
@@ -37,12 +38,12 @@ export function getCharacterById(id: number) {
 
 
 // Ger ut datan med Futurama-karaktärerna från Futurama APIt. Använder sig av REST.
-export async function getCharactersREST(page = 1, size = 20): Promise<CharacterResponse>
+export async function getCharactersREST(page = 1, limit = DEFAULT_LIMIT): Promise<CharacterResponse>
 {
     let url = new URL("https://futuramaapi.com/api/characters?orderBy=id&orderByDirection=asc");
 
     url.searchParams.append( "page", String(page) );
-    url.searchParams.append( "size", String(size) );
+    url.searchParams.append( "size", String(limit) );
 
     const fetchedData = await fetch(url);
     const jsonData = await fetchedData.json();
