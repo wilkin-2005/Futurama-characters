@@ -1,0 +1,35 @@
+
+
+form.signup-form {
+    max-width: 960px;
+    margin-inline: auto;
+    padding: 1rem;
+
+    background-color: aliceblue;
+    border: 2px solid black;
+    border-radius: 1rem;
+
+    input {
+        margin: 0.5rem;
+        padding: 0.5rem;
+        border: 1px solid black;
+        border-radius: 0.75rem;
+    }
+
+    button {
+        width: 110px;
+        margin: 0.5rem;
+        padding: 0.5rem;
+
+        border: 1px solid black;
+        border-radius: 0.75rem;
+        background-color: lightblue;
+
+        font-weight: bold;
+
+        &:hover, &:focus-visible {
+            background-color: cyan;
+            transition: 100ms;
+        }
+    }
+}

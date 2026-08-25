@@ -31,12 +31,12 @@ export default function LimitSelect()
             <select id="limit-selector" name="limit" defaultValue={limit}
             onChange={handleChange}
             >
-                <option> { 8} </option>
-                <option> {16} </option>
-                <option> {24} </option>
-                <option> {32} </option>
-                <option> {48} </option>
-                <option> {64} </option>
+                <option value="8"  >  8 </option>
+                <option value="16" > 16 </option>
+                <option value="24" > 24 </option>
+                <option value="32" > 32 </option>
+                <option value="48" > 48 </option>
+                <option value="64" > 64 </option>
             </select>
         </div>
     );
