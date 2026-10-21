@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import styles from "./futurama.module.css";
 import Hero from "@/src/components/hero/hero";
 import Pagination from "@/src/components/pagination/pagination";
@@ -14,7 +15,7 @@ function CharacterCard({ id, name, image: imageUrl }: CharacterProps)
             <h3> Namn: <span> {name} </span> </h3>
             {
                 imageUrl &&
-                    <img alt="" src={imageUrl} width={400} height={352} />
+                    <Image alt="" src={imageUrl} width={800} height={600} />
             }
             <a href={`futurama/character/${id}`}>Läs mer...</a>
 

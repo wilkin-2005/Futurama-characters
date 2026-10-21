@@ -1,6 +1,6 @@
 
 import data from "./futurama-characters.json";
-import { formatCharacterDate } from "@/src/lib/util";
+// import { formatCharacterDate } from "@/src/lib/util";
 
 export interface CharacterProps {
     id?: number;
@@ -39,7 +39,7 @@ export function getCharacterById(id: number) {
 // Ger ut datan med Futurama-karaktärerna från Futurama APIt. Använder sig av REST.
 export async function getCharactersREST(page = 1, size = 20): Promise<CharacterResponse>
 {
-    let url = new URL("https://futuramaapi.com/api/characters?orderBy=id&orderByDirection=asc");
+    const url = new URL("https://futuramaapi.com/api/characters?orderBy=id&orderByDirection=asc");
 
     url.searchParams.append( "page", String(page) );
     url.searchParams.append( "size", String(size) );
@@ -134,8 +134,7 @@ export function translateCharacterProps(char: CharacterProps): CharacterProps
     }
 
     // Ska ändra "createdAt" datumet till något mer läsbart. Gör dock ännu inget.
-    let createdAtProp: string;
-    createdAtProp = formatCharacterDate(char.createdAt);
+    /* const createdAtProp: string = formatCharacterDate(char.createdAt); */
 
 
     return {

@@ -1,5 +1,6 @@
 
 import Link from "next/link";
+import Image from "next/image";
 import styles from "@/src/app/futurama/futurama.module.css";
 import { notFound } from "next/navigation";
 import { CharacterProps, translateCharacterProps, getCharacterByIdREST } from "@/src/data/futurama-characters";
@@ -29,12 +30,12 @@ export default async function CharacterPage(  { params }: { params: Promise<{ id
 
                 <div> {
                     character.image &&
-                    <img alt="" src={character.image} width={800} height={600} />
+                    <Image alt="" src={character.image} width={800} height={600} />
                 } </div>
 
                 <div>
                     <h2 className={styles.heading2} > {translatedProps.name.toUpperCase()} </h2>
-                    
+
                     <p><b>Namn:</b> {translatedProps.name}</p>
                     <p><b>Kön:</b> {translatedProps.gender}</p>
                     <p><b>Status:</b> {translatedProps.status}</p>
